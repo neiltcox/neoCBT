@@ -83,6 +83,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_week1) {
             // Action Here
         } else if (id == R.id.nav_week2) {
+            //i made a change
 
         } else if (id == R.id.nav_week3) {
 
