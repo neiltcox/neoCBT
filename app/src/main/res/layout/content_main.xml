@@ -13,11 +13,26 @@
     tools:context="com.tinassist.neocbt.neocbt.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="May the force be with you 888 " />
+
     //Making mad changes !!!
     //It's been lit
     //So lit that I'm on fire
+    //Mwahaha more changes!
+    //Neil change
+
+    <FrameLayout
+        android:id="@+id/frame_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/frame_container">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This should be invisible (Something is wrong!!)" />
+    </FrameLayout>
+
 </RelativeLayout>
