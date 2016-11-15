@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.tinassist.neocbt.neocbt.surveys.PreSurvey1;
 import com.tinassist.neocbt.neocbt.week1.W1P1;
 import com.tinassist.neocbt.neocbt.week2.W2P1;
 import com.tinassist.neocbt.neocbt.week3.W3P1;
@@ -113,7 +114,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.home) {
             fragment = new Home();
         } else if (id == R.id.pre_survey) {
-            fragment = new PreSurvey();
+            fragment = new PreSurvey1();
         }
 
         /*if (fragment != null) {
