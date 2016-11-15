@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -12,6 +14,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
+import com.tinassist.neocbt.neocbt.surveys.PreSurvey1;
+import com.tinassist.neocbt.neocbt.week1.W1P1;
+import com.tinassist.neocbt.neocbt.week2.W2P1;
+import com.tinassist.neocbt.neocbt.week3.W3P1;
+import com.tinassist.neocbt.neocbt.week4.W4P1;
+import com.tinassist.neocbt.neocbt.week5.W5P1;
+import com.tinassist.neocbt.neocbt.week6.W6P1;
+import com.tinassist.neocbt.neocbt.week7.W7P1;
+import com.tinassist.neocbt.neocbt.week8.W8P1;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -40,6 +52,8 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        onNavigationItemSelected(navigationView.getMenu().getItem(0));
     }
 
     @Override
@@ -80,25 +94,40 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        Fragment fragment = null;
         if (id == R.id.nav_week1) {
-            // Action Here
+            fragment = new W1P1();
         } else if (id == R.id.nav_week2) {
-            //i made a change by KEVINATOR
-
+            fragment = new W2P1();
         } else if (id == R.id.nav_week3) {
-
+            fragment = new W3P1();
         } else if (id == R.id.nav_week4) {
-
+            fragment = new W4P1();
         } else if (id == R.id.nav_week5) {
-
+            fragment = new W5P1();
         } else if (id == R.id.nav_week6) {
-
+            fragment = new W6P1();
         } else if (id == R.id.nav_week7) {
-
+            fragment = new W7P1();
         } else if (id == R.id.nav_week8) {
-
+            fragment = new W8P1();
+        } else if (id == R.id.home) {
+            fragment = new Home();
+        } else if (id == R.id.pre_survey) {
+            fragment = new PreSurvey1();
         }
 
+        /*if (fragment != null) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.frame_container, fragment).commit();
+        }*/
+
+        if (fragment != null) {
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.frame_container, fragment);
+            transaction.addToBackStack(null);
+            transaction.commit();
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

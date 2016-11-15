@@ -3,6 +3,16 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/home"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Home"
+            android:checked="true"/>
+        <item
+            android:id="@+id/pre_survey"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Pre Survey"/>
+
+        <item
             android:id="@+id/nav_week1"
             android:icon="@drawable/ic_menu_manage"
             android:title="Week 1" />
@@ -36,17 +46,10 @@
             android:title="Week 8" />
     </group>
 
-    <item android:title="Communicate">
+    <!--<item android:title="Program">
         <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+
         </menu>
-    </item>
+    </item>-->
 
 </menu>
