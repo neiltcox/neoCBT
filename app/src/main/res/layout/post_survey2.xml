@@ -1,5 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-</FrameLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:id="@+id/question2"
+        tools:textColor="@android:color/background_dark"
+        tools:textSize="30sp" />
+    <Button
+        android:text="NEXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button10"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button10"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="72dp">
+
+        <RadioButton
+            android:text="Not at all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton"
+            android:onClick="selectOption"
+            android:layout_above="@+id/radioGroup11"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_weight="1"/>
+
+        <RadioButton
+            android:text="A little bit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton12"
+            android:onClick="selectOption"
+            android:layout_below="@+id/radioButton11"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+
+        <RadioButton
+            android:text="Moderately"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton13"
+            android:onClick="selectOption"
+            android:layout_below="@+id/radioButton12"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+        <RadioButton
+            android:text="Quite a bit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton14"
+            android:onClick = "selectOption"
+            android:layout_below="@+id/radioButton13"
+            android:layout_alignParentLeft="true"
+            android:layout_alighnParentStart="true" />
+        <RadioButton
+            android:text="Extremely"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton14"
+            android:layout_below="@+id/radioButton14"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+
+
+
+    </RadioGroup>
+
+    <TextView
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        tools:textSize="30sp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:layout_above="@+id/button"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>
