@@ -15,8 +15,9 @@ import com.tinassist.neocbt.neocbt.R;
 
 public class W1P2 extends Fragment {
     public W1P2() {
-        // Required empty public constructor
+
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

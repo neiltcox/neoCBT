@@ -26,7 +26,7 @@ import com.tinassist.neocbt.neocbt.week7.W7P1;
 import com.tinassist.neocbt.neocbt.week8.W8P1;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +35,22 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.next);
         fab.setOnClickListener(new View.OnClickListener() {
+            Fragment currentFragment = new Home(); //getSupportFragmentManager().findFragmentByTag("CURRENT_FRAGMENT");
+            Fragment nextFragment = currentFragment.getNextFragment();
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                switch (view.getId()) {
+                    case R.id.next:
+                        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.frame_container, nextFragment, "CURRENT_FRAGMENT");
+                        transaction.addToBackStack(null);
+                        transaction.commit();
+                        break;
+
+
+                }
             }
         });
 
@@ -124,7 +134,7 @@ public class MainActivity extends AppCompatActivity
 
         if (fragment != null) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.frame_container, fragment);
+            transaction.replace(R.id.frame_container, fragment, "CURRENT_FRAGMENT");
             transaction.addToBackStack(null);
             transaction.commit();
         }

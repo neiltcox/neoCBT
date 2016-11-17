@@ -16,7 +16,7 @@
         android:layout_centerHorizontal="true" />
 
     <TextView
-        android:text="Tinnitus Module 1"
+        android:text="Tinnitus Module 1, Page 1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView2"

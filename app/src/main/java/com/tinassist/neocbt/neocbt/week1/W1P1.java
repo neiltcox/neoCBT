@@ -14,8 +14,14 @@ import com.tinassist.neocbt.neocbt.R;
 
 public class W1P1 extends Fragment {
 
+    //Fragment nextFragment = new W1P2();
+
     public W1P1() {
-        // Required empty public constructor
+
+    }
+
+    public Fragment getNextFragment(){
+        return new W1P2();
     }
 
     @Override
