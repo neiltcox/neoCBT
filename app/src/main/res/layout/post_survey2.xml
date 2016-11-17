@@ -32,9 +32,9 @@
             android:text="Not at all"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton"
+            android:id="@+id/radioButton11"
             android:onClick="selectOption"
-            android:layout_above="@+id/radioGroup11"
+            android:layout_above="@+id/radioGroup12"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_weight="1"/>
@@ -89,7 +89,7 @@
         android:id="@+id/textView2"
         tools:textSize="30sp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:layout_above="@+id/button"
+        android:layout_above="@+id/button10"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 

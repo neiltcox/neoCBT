@@ -23,32 +23,31 @@ public class PostSurvey1 extends Fragment {
     private int total = 0;
     private int counter = 0;
     private int tempint = 0;
-    private String[] anArray = new String[25];
-    anArray[0] = "1. Because of your tinnitus, is it difficult for you to concentrate?";
-    anArray[1] = "2. Does the loudness of your tinnitus make it difficult for you to hear people?";
-    anArray[2] = "3. Does your tinnitus make you angry?";
-    anArray[3] = "4. Does your tinnitus make you feel confused?";
-    anArray[4] = "5. Because of your tinnitus, do you feel desperate?";
-    anArray[5] = "6. Do you complain a great deal about your tinnitus?";
-    anArray[6] = "7. Because of your tinnitus, do you have trouble falling to sleep at night?";
-    anArray[7] = "8. Do you feel as though you cannot escape your tinnitus?";
-    anArray[8] = "9. Does your tinnitus interfere with your ability to enjoy your social activities (such as going out to dinner, to the movies)?";
-    anArray[9] = "10. Because of your tinnitus, do you feel frustrated?";
-    anArray[10] = "11. Because of your tinnitus, do you feel that you have a terrible disease?";
-    anArray[11] = "12. Does your tinnitus make it difficult for you to enjoy life?";
-    anArray[12] = "13. Does your tinnitus interfere with your job or household responsibilities?";
-    anArray[13] = "14. Because of your tinnitus, do you find that you are often irritable?";
-    anArray[14] = "15. Because of your tinnitus, is it difficult for you to read?";
-    anArray[15] = "16. Does your tinnitus make you upset?";
-    anArray[16] = "17. Do you feel that your tinnitus problem has placed stress on your relationships with members of your family and friends?";
-    anArray[17] = "18. Do you find it difficult to focus your attention away from your tinnitus and on other things"';
-    anArray[18] = "19. Do you feel that you have no control over your tinnitus?";
-    anArray[19] = "20. Because of your tinnitus, do you often feel tired?";
-    anArray[20] = "21. Because of your tinnitus, do you feel depressed?";
-    anArray[21] = "22. Does your tinnitus make you feel anxious?";
-    anArray[22] = "23. Do you feel that you can no longer cope with your tinnitus?";
-    anArray[23] = "24. Does your tinnitus get worse when you are under stress?";
-    anArray[24] = "25. Does your tinnitus make you feel insecure?";
+    private String[] anArray = {"1. Because of your tinnitus, is it difficult for you to concentrate?",
+            "2. Does the loudness of your tinnitus make it difficult for you to hear people?",
+            "3. Does your tinnitus make you angry?",
+            "4. Does your tinnitus make you feel confused?",
+            "5. Because of your tinnitus, do you feel desperate?",
+            "6. Do you complain a great deal about your tinnitus?",
+            "7. Because of your tinnitus, do you have trouble falling to sleep at night?",
+            "8. Do you feel as though you cannot escape your tinnitus?",
+            "9. Does your tinnitus interfere with your ability to enjoy your social activities (such as going out to dinner, to the movies)?",
+            "10. Because of your tinnitus, do you feel frustrated?",
+            "11. Because of your tinnitus, do you feel that you have a terrible disease?",
+            "12. Does your tinnitus make it difficult for you to enjoy life?",
+            "13. Does your tinnitus interfere with your job or household responsibilities?",
+            "14. Because of your tinnitus, do you find that you are often irritable?",
+            "15. Because of your tinnitus, is it difficult for you to read?",
+            "16. Does your tinnitus make you upset?",
+            "17. Do you feel that your tinnitus problem has placed stress on your relationships with members of your family and friends?",
+            "18. Do you find it difficult to focus your attention away from your tinnitus and on other things?",
+            "19. Do you feel that you have no control over your tinnitus?",
+            "20. Because of your tinnitus, do you often feel tired?",
+            "21. Because of your tinnitus, do you feel depressed?",
+            "22. Does your tinnitus make you feel anxious?",
+            "23. Do you feel that you can no longer cope with your tinnitus?",
+            "24. Does your tinnitus get worse when you are under stress?",
+            "25. Does your tinnitus make you feel insecure?"};
     public PostSurvey1() {
         // Required empty public constructor
     }
@@ -56,7 +55,7 @@ public class PostSurvey1 extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.post_survey1);
+        setContentView(android.R.layout.post_survey1);
         btn = (Button) findViewById(R.id.button);
         txtViewq = (TextView) findViewById(R.id.question);
         txtViewtotal = (TextView) findViewById(R.id.textView2);
@@ -67,13 +66,21 @@ public class PostSurvey1 extends Fragment {
             public void onClick(View v) {
                 total += tempint;
                 counter++;
-                txtViewq.setText(anArray[counter]);
-                tempint = 0;
-            }
+                if (counter < 25)
+                {
+                    txtViewq.setText(anArray[counter]);
+                    tempint = 0;
+                }
+                else
+                {
 
+                    if (total
+                }
+            }
+        }
     }
 
-    @Override
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
