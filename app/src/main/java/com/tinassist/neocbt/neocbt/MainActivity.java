@@ -35,25 +35,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.next);
-        fab.setOnClickListener(new View.OnClickListener() {
-            Fragment currentFragment = new Home(); //getSupportFragmentManager().findFragmentByTag("CURRENT_FRAGMENT");
-            Fragment nextFragment = currentFragment.getNextFragment();
-            @Override
-            public void onClick(View view) {
-                switch (view.getId()) {
-                    case R.id.next:
-                        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                        transaction.replace(R.id.frame_container, nextFragment, "CURRENT_FRAGMENT");
-                        transaction.addToBackStack(null);
-                        transaction.commit();
-                        break;
-
-
-                }
-            }
-        });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -134,6 +115,7 @@ public class MainActivity extends AppCompatActivity
 
         if (fragment != null) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit);
             transaction.replace(R.id.frame_container, fragment, "CURRENT_FRAGMENT");
             transaction.addToBackStack(null);
             transaction.commit();
