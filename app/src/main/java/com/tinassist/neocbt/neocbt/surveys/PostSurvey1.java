@@ -81,10 +81,10 @@ public class PostSurvey1 extends Fragment {
                     txtViewq.setText(anArray[counter]);
                     tempint = 0;
                 }
-                else
-                {
-                    pass;
-                }
+                //else
+                //{
+                //    pass;
+                //}
             }
         });
         return inflater.inflate(R.layout.post_survey1, container, false);

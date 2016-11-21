@@ -81,10 +81,10 @@ public class PreSurvey1 extends Fragment {
                     txtViewq.setText(anArray[counter]);
                     tempint = 0;
                 }
-                else
-                {
-                    pass;
-                }
+                //else
+                //{
+                //
+                //}
             }
         });
         return inflater.inflate(R.layout.post_survey1, container, false);
