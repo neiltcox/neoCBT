@@ -19,7 +19,6 @@ public class PostSurvey1 extends Fragment {
 
     Button btn;
     TextView txtViewq;
-    TextView txtViewtotal;
     private int total = 0;
     private int counter = 0;
     private int tempint = 0;
@@ -48,18 +47,29 @@ public class PostSurvey1 extends Fragment {
             "23. Do you feel that you can no longer cope with your tinnitus?",
             "24. Does your tinnitus get worse when you are under stress?",
             "25. Does your tinnitus make you feel insecure?"};
+    private String[] results = {"You rsponsese put you in the slight to mild tinnitus handicapped group. " +
+            "This is the lowerst level of handicap based on this survey. Our program will help you learn " +
+            "how to mask your tinnitus by environmental sounds and easily forget it with your activities.",
+            "Your responses put you in the moderately tinnitus handicapped group. Your tinnitus might " +
+            "interfere with your well being and daily life. Our program will help you learn techniques " +
+            "to manage your tinnitues and take your attention away from it.",
+            "Your responses put you in the severly tinnitus handicapped group. Your tinnitus is always " +
+            "heard, leads to disturbed sleep patterns and can interfere with daily activities. We recommend " +
+                    "that you see a therapist in this regard. Our program will help you learn techniques " +
+                    "to manage your tinnitus and take your attention away from it. However, it cannot replace " +
+                    "the help of a therapist."};
     public PostSurvey1() {
         // Required empty public constructor
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(android.R.layout.post_survey1);
-        btn = (Button) findViewById(R.id.button);
-        txtViewq = (TextView) findViewById(R.id.question);
-        txtViewtotal = (TextView) findViewById(R.id.textView2);
-        txtViewtotal.setEnabled(true);
+
+
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        btn = (Button) btn.findViewById(R.id.button);
+        txtViewq = (TextView) txtViewq.findViewById(R.id.question);
+        txtViewq.setEnabled(true);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,17 +83,10 @@ public class PostSurvey1 extends Fragment {
                 }
                 else
                 {
-
-                    if (total
+                    pass;
                 }
             }
-        }
-    }
-
-
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        });
         return inflater.inflate(R.layout.post_survey1, container, false);
     };
 
