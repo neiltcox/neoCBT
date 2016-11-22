@@ -4,7 +4,7 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
-        android:text="Based on youre responses, it seems that you have high severity of Post-Traumatic Stress Disorder (PTSD) symptoms. We strongly recommend that you see a counselor or therapist in this regard at your earliest convenience. While this program will ehlp you learn techniquest to manage your symptoms, it cannot replace the help of a therapist."
+        android:text="Based on youre responses, it seems that you have high severity of Post-Traumatic Stress Disorder (PTSD) symptoms. We strongly recommend that you see a counselor or therapist in this regard at your earliest convenience. While this program will ehlp you learn techniques to manage your symptoms, it cannot replace the help of a therapist."
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView13"
