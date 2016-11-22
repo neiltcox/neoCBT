@@ -48,40 +48,45 @@ public class PreSurvey2 extends Fragment {
         // Required empty public constructor
     }
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.pre_survey2, container, false);
-        btn = (Button) btn.findViewById(R.id.button10);
-        btn = (Button) v.findViewById(R.id.button);
-        btn.setOnClickListener(btnListener);
+        View v = inflater.inflate(R.layout.post_survey2, container, false);
+        btn = (Button) v.findViewById(R.id.button10);
+        btn.setOnClickListener(btnListener2);
         rdo11 = (RadioButton) v.findViewById(R.id.radioButton11);
-        rdo11.setOnClickListener(btnListener);
+        rdo11.setOnClickListener(btnListener2);
         rdo12 = (RadioButton) v.findViewById(R.id.radioButton12);
-        rdo12.setOnClickListener(btnListener);
+        rdo12.setOnClickListener(btnListener2);
         rdo13 = (RadioButton) v.findViewById(R.id.radioButton13);
-        rdo13.setOnClickListener(btnListener);
+        rdo13.setOnClickListener(btnListener2);
         rdo14 = (RadioButton) v.findViewById(R.id.radioButton14);
-        rdo14.setOnClickListener(btnListener);
+        rdo14.setOnClickListener(btnListener2);
         rdo15 = (RadioButton) v.findViewById(R.id.radioButton15);
-        txtViewq = (TextView) txtViewq.findViewById(R.id.question2);
+        rdo15.setOnClickListener(btnListener2);
+        txtViewq = (TextView) v.findViewById(R.id.question2);
         txtViewq.setEnabled(true);
         return v;
     }
 
-    public View.OnClickListener btnListener = new View.OnClickListener() {
+    public View.OnClickListener btnListener2 = new View.OnClickListener() {
         @Override
         public void onClick(View v){
             switch(v.getId()) {
-                case R.id.button:
+                case R.id.button10:
                     if (counter2 < 17)
                     {
-                        txtViewq.setText(anArray[counter2]);
+                        counter2++;
+                        String q = "Have you experienced " + anArray[counter2];
+                        txtViewq.setText(q);
                         total2 += tempint2;
                         tempint2 = 0;
-                        counter2++;
                     }
                     else
                     {

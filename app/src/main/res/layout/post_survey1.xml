@@ -19,6 +19,7 @@
         android:id="@+id/question"
         tools:textColor="@android:color/background_dark"
         tools:textSize="12sp" />
+
     <Button
         android:text="NEXT"
         android:layout_width="wrap_content"
@@ -27,7 +28,10 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:backgroundTint="@color/colorPrimary" />
+        android:backgroundTint="@color/colorPrimary"
+        tools:textColor="@color/colorAccent"
+        tools:layout_height="60dp"
+        tools:layout_width="match_parent" />
 
     <RadioGroup
         android:layout_width="wrap_content"
@@ -47,7 +51,9 @@
             android:onClick="selectOption"
             android:layout_above="@+id/radioGroup"
             android:layout_weight="1"
-            tools:buttonTint="@color/colorPrimary" />
+            tools:buttonTint="@color/colorPrimary"
+            app:buttonTint="@color/colorPrimary"
+            tools:backgroundTint="@color/colorPrimary" />
 
         <RadioButton
             android:text="SOMETIMES"
@@ -56,7 +62,8 @@
             android:id="@+id/radioButton2"
             android:onClick="selectOption"
             android:layout_below="@+id/radioButton"
-            app:buttonTint="@color/colorPrimary" />
+            app:buttonTint="@color/colorPrimary"
+            tools:backgroundTint="@color/colorPrimary" />
 
 
         <RadioButton
@@ -66,7 +73,9 @@
             android:id="@+id/radioButton3"
             android:onClick="selectOption"
             android:layout_below="@+id/radioButton2"
-            tools:buttonTint="@color/colorPrimary" />
+            tools:buttonTint="@color/colorPrimary"
+            app:buttonTint="@color/colorPrimary"
+            tools:backgroundTint="@color/colorPrimary" />
 
 
 
