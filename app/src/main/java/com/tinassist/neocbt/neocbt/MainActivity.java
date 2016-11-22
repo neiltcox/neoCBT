@@ -125,6 +125,29 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    private void scheduleNotification(Notification notification, int delay) {
+        Intent notificationIntent = new Intent(this, NotificationPublisher.class);
+        notificationIntent.putExtra(NotificationPublisher.NOTIFICATION_ID, 1);
+        notificationIntent.putExtra(NotificationPublisher.NOTIFICATION, notification);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        long futureInMillis = SystemClock.elapsedRealtime() + delay;
+        AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, SystemClock.elapsedRealtime(),
+                60000, pendingIntent);
+        //alarmManager.set(AlarmManager.RTC_WAKEUP, futureInMillis, pendingIntent);
+    }
+
+    public Notification getNotification() {
+
+        Notification.Builder builder = new Notification.Builder(this);
+        builder.setContentTitle("Meditation Time!");
+        builder.setContentText("It's time for a new mindful breathing exercise!");
+        builder.setSmallIcon(R.drawable.ear1);
+        builder.setColor(0x4b966e);
+        return builder.build();
+    }
+
     //public void original_notification () {
       //  NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this);
         //mBuilder.setSmallIcon(R.drawable.logo1);
