@@ -18,7 +18,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.tinassist.neocbt.neocbt.surveys.PostSurvey1;
+import com.tinassist.neocbt.neocbt.surveys.PostSurvey2;
+import com.tinassist.neocbt.neocbt.surveys.PostSurvey3;
+import com.tinassist.neocbt.neocbt.surveys.PostSurvey4;
+import com.tinassist.neocbt.neocbt.surveys.PostSurvey5;
 import com.tinassist.neocbt.neocbt.surveys.PreSurvey1;
+import com.tinassist.neocbt.neocbt.surveys.PreSurvey2;
+import com.tinassist.neocbt.neocbt.surveys.PreSurvey3;
+import com.tinassist.neocbt.neocbt.surveys.PreSurvey4;
+import com.tinassist.neocbt.neocbt.surveys.PreSurvey5;
 import com.tinassist.neocbt.neocbt.week1.W1P1;
 import com.tinassist.neocbt.neocbt.week2.W2P1;
 import com.tinassist.neocbt.neocbt.week3.W3P1;
@@ -30,7 +39,7 @@ import com.tinassist.neocbt.neocbt.week8.W8P1;
 
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,9 +118,26 @@ public class MainActivity extends AppCompatActivity
             fragment = new W8P1();
         } else if (id == R.id.home) {
             fragment = new Home();
-            scheduleNotification(getNotification(), 1000);
-        } else if (id == R.id.pre_survey) {
+        } else if (id == R.id.pre_survey1) {
             fragment = new PreSurvey1();
+        } else if (id == R.id.pre_survey2) {
+            fragment = new PreSurvey2();
+        } else if (id == R.id.pre_survey3) {
+            fragment = new PreSurvey3();
+        } else if (id == R.id.pre_survey4) {
+            fragment = new PreSurvey4();
+        } else if (id == R.id.pre_survey5) {
+            fragment = new PreSurvey5();
+        } else if (id == R.id.post_survey1) {
+            fragment = new PostSurvey1();
+        } else if (id == R.id.post_survey2) {
+            fragment = new PostSurvey2();
+        } else if (id == R.id.post_survey3) {
+            fragment = new PostSurvey3();
+        } else if (id == R.id.post_survey4) {
+            fragment = new PostSurvey4();
+        } else if (id == R.id.post_survey5) {
+            fragment = new PostSurvey5();
         }
 
         /*if (fragment != null) {
@@ -121,7 +147,8 @@ public class MainActivity extends AppCompatActivity
 
         if (fragment != null) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.frame_container, fragment);
+            transaction.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit);
+            transaction.replace(R.id.frame_container, fragment, "CURRENT_FRAGMENT");
             transaction.addToBackStack(null);
             transaction.commit();
         }

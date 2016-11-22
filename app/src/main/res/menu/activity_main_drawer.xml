@@ -1,49 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/home"
-            android:icon="@drawable/ic_menu_manage"
             android:title="Home"
             android:checked="true"/>
+
         <item
-            android:id="@+id/pre_survey"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Pre Survey"/>
+            android:title="Pre Survey 1"
+            android:id="@+id/pre_survey1" />
+        <item
+            android:title="Pre Survey 2"
+            android:id="@+id/pre_survey2" />
+        <item
+            android:title="Pre Survey 3"
+            android:id="@+id/pre_survey3" />
+        <item
+            android:title="Pre Survey 4"
+            android:id="@+id/pre_survey4" />
+        <item
+            android:title="Pre Survey 5"
+            android:id="@+id/pre_survey5" />
 
         <item
             android:id="@+id/nav_week1"
-            android:icon="@drawable/ic_menu_manage"
             android:title="Week 1" />
         <item
             android:id="@+id/nav_week2"
-            android:icon="@drawable/ic_menu_manage"
             android:title="Week 2" />
         <item
             android:id="@+id/nav_week3"
-            android:icon="@drawable/ic_menu_manage"
             android:title="Week 3" />
         <item
             android:id="@+id/nav_week4"
-            android:icon="@drawable/ic_menu_manage"
             android:title="Week 4" />
         <item
             android:id="@+id/nav_week5"
-            android:icon="@drawable/ic_menu_manage"
             android:title="Week 5" />
         <item
             android:id="@+id/nav_week6"
-            android:icon="@drawable/ic_menu_manage"
             android:title="Week 6" />
         <item
             android:id="@+id/nav_week7"
-            android:icon="@drawable/ic_menu_manage"
             android:title="Week 7" />
         <item
             android:id="@+id/nav_week8"
-            android:icon="@drawable/ic_menu_manage"
             android:title="Week 8" />
+
+        <item
+            android:title="Post Survey 1"
+            android:id="@+id/post_survey1" />
+        <item
+            android:title="Post Survey 2"
+            android:id="@+id/post_survey2" />
+        <item
+            android:title="Post Survey 3"
+            android:id="@+id/post_survey3" />
+        <item
+            android:title="Post Survey 4"
+            android:id="@+id/post_survey4" />
+        <item
+            android:title="Post Survey 5"
+            android:id="@+id/post_survey5" />
     </group>
 
     <!--<item android:title="Program">
