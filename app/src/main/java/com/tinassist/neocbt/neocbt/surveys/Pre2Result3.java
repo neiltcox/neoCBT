@@ -1,4 +1,4 @@
-package com.tinassist.neocbt.neocbt.week8;
+package com.tinassist.neocbt.neocbt.surveys;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,11 +9,11 @@ import android.view.ViewGroup;
 import com.tinassist.neocbt.neocbt.R;
 
 /**
- * Created by Jens on 11/21/16.
+ * Created by novap on 11/21/2016.
  */
 
-public class W8P0 extends Fragment {
-    public W8P0() {
+public class Pre2Result3 extends Fragment {
+    public Pre2Result3() {
         // Required empty public constructor
     }
 
@@ -27,6 +27,6 @@ public class W8P0 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.w8p0, container, false);
+        return inflater.inflate(R.layout.pre2_result3, container, false);
     }
 }

@@ -12,7 +12,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.tinassist.neocbt.neocbt.surveys.PostSurvey1;
+import com.tinassist.neocbt.neocbt.surveys.PostSurvey2;
 import com.tinassist.neocbt.neocbt.surveys.PreSurvey1;
+import com.tinassist.neocbt.neocbt.surveys.PreSurvey2;
 import com.tinassist.neocbt.neocbt.week1.W1P1;
 import com.tinassist.neocbt.neocbt.week2.W2P1;
 import com.tinassist.neocbt.neocbt.week3.W3P1;
@@ -103,9 +106,14 @@ public class MainActivity extends AppCompatActivity
             fragment = new W8P1();
         } else if (id == R.id.home) {
             fragment = new Home();
-            //scheduleNotification(getNotification(), 1000);
-        } else if (id == R.id.pre_survey) {
+        } else if (id == R.id.pre_survey1) {
             fragment = new PreSurvey1();
+        } else if (id == R.id.pre_survey2) {
+            fragment = new PreSurvey2();
+        } else if (id == R.id.post_survey1) {
+            fragment = new PostSurvey1();
+        } else if (id == R.id.post_survey2) {
+            fragment = new PostSurvey2();
         }
 
         /*if (fragment != null) {
@@ -125,28 +133,28 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-//    private void scheduleNotification(Notification notification, int delay) {
-//        Intent notificationIntent = new Intent(this, NotificationPublisher.class);
-//        notificationIntent.putExtra(NotificationPublisher.NOTIFICATION_ID, 1);
-//        notificationIntent.putExtra(NotificationPublisher.NOTIFICATION, notification);
-//        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-//
-//        long futureInMillis = SystemClock.elapsedRealtime() + delay;
-//        AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
-//        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, SystemClock.elapsedRealtime(),
-//                60000, pendingIntent);
-//        //alarmManager.set(AlarmManager.RTC_WAKEUP, futureInMillis, pendingIntent);
-//    }
-//
-//    public Notification getNotification() {
-//
-//        Notification.Builder builder = new Notification.Builder(this);
-//        builder.setContentTitle("Meditation Time!");
-//        builder.setContentText("It's time for a new mindful breathing exercise!");
-//        builder.setSmallIcon(R.drawable.ear1);
-//        builder.setColor(0x4b966e);
-//        return builder.build();
-//    }
+    private void scheduleNotification(Notification notification, int delay) {
+        Intent notificationIntent = new Intent(this, NotificationPublisher.class);
+        notificationIntent.putExtra(NotificationPublisher.NOTIFICATION_ID, 1);
+        notificationIntent.putExtra(NotificationPublisher.NOTIFICATION, notification);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        long futureInMillis = SystemClock.elapsedRealtime() + delay;
+        AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, SystemClock.elapsedRealtime(),
+                60000, pendingIntent);
+        //alarmManager.set(AlarmManager.RTC_WAKEUP, futureInMillis, pendingIntent);
+    }
+
+    public Notification getNotification() {
+
+        Notification.Builder builder = new Notification.Builder(this);
+        builder.setContentTitle("Meditation Time!");
+        builder.setContentText("It's time for a new mindful breathing exercise!");
+        builder.setSmallIcon(R.drawable.ear1);
+        builder.setColor(0x4b966e);
+        return builder.build();
+    }
 
     //public void original_notification () {
       //  NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this);
