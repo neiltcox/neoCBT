@@ -2,6 +2,8 @@ package com.tinassist.neocbt.neocbt.surveys;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +26,11 @@ public class PreSurvey2 extends Fragment {
     RadioButton rdo13;
     RadioButton rdo14;
     RadioButton rdo15;
+
+    Fragment nextFragment1 = new Pre2Result1();
+    Fragment nextFragment2 = new Pre2Result2();
+    Fragment nextFragment3 = new Pre2Result3();
+
     public int total2 = 0;
     public int counter2 = 0;
     public int tempint2 = 0;
@@ -92,15 +99,30 @@ public class PreSurvey2 extends Fragment {
                     {
                         if (total2 < 30)
                         {
-                            //link to pre2result1
+                            FragmentManager fragmentManager = getFragmentManager();
+                            FragmentTransaction transaction = fragmentManager.beginTransaction();
+                            transaction.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit);
+                            transaction.replace(R.id.frame_container, nextFragment1, "CURRENT_FRAGMENT");
+                            transaction.addToBackStack(null);
+                            transaction.commit();
                         }
                         else if (total2 < 45)
                         {
-                            //link to pre2result2
+                            FragmentManager fragmentManager = getFragmentManager();
+                            FragmentTransaction transaction = fragmentManager.beginTransaction();
+                            transaction.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit);
+                            transaction.replace(R.id.frame_container, nextFragment2, "CURRENT_FRAGMENT");
+                            transaction.addToBackStack(null);
+                            transaction.commit();
                         }
                         else
                         {
-                            //link to pre2result3
+                            FragmentManager fragmentManager = getFragmentManager();
+                            FragmentTransaction transaction = fragmentManager.beginTransaction();
+                            transaction.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit);
+                            transaction.replace(R.id.frame_container, nextFragment3, "CURRENT_FRAGMENT");
+                            transaction.addToBackStack(null);
+                            transaction.commit();
                         }
                     }
                     break;
