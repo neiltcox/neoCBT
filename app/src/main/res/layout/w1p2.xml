@@ -54,7 +54,7 @@
                 android:layout_height="489dp"
                 android:id="@+id/textView9"
                 android:textSize="16sp"
-                tools:layout_editor_absoluteX="48dp"
+                tools:layout_editor_absoluteX="80dp"
                 android:lineSpacingExtra="4sp"
                 app:layout_constraintTop_toTopOf="parent" />
             </android.support.constraint.ConstraintLayout>
