@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/post_survey1"
     android:layout_width="match_parent"
@@ -12,35 +13,37 @@
 
     <Button
         android:text="NEXT"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
         android:id="@+id/button10"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/colorAccent"
+        android:layout_alignParentStart="true"
+        tools:layout_height="60dp"
+        android:backgroundTint="@color/colorPrimary" />
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="First Question Goes Here"
+        android:text="Have you experienced: 1.Repeated, disturbing memories, thoughts, or images of a stressful experience from the past?"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:id="@+id/question2"
-        tools:textColor="@android:color/background_dark"
-        tools:textSize="30sp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="32dp" />
+        android:layout_marginLeft="10dp"
+        android:textSize="30sp"
+        android:textColor="@android:color/background_dark" />
 
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="31dp"
-        android:layout_marginLeft="31dp"
-        android:layout_marginStart="31dp"
+        android:layout_marginBottom="26dp"
+        android:layout_marginLeft="20dp"
         android:layout_above="@+id/button10"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
         <RadioButton
@@ -50,7 +53,8 @@
             android:id="@+id/radioButton11"
             android:onClick="selectOption"
             android:layout_above="@+id/radioGroup12"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            app:buttonTint="@color/colorPrimary" />
 
         <RadioButton
             android:text="A little bit"
@@ -58,7 +62,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/radioButton12"
             android:onClick="selectOption"
-            android:layout_below="@+id/radioButton11" />
+            android:layout_below="@+id/radioButton11"
+            app:buttonTint="@color/colorPrimary" />
 
 
         <RadioButton
@@ -67,20 +72,23 @@
             android:layout_height="wrap_content"
             android:id="@+id/radioButton13"
             android:onClick="selectOption"
-            android:layout_below="@+id/radioButton12" />
+            android:layout_below="@+id/radioButton12"
+            app:buttonTint="@color/colorPrimary" />
         <RadioButton
             android:text="Quite a bit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/radioButton14"
             android:onClick = "selectOption"
-            android:layout_below="@+id/radioButton13" />
+            android:layout_below="@+id/radioButton13"
+            app:buttonTint="@color/colorPrimary" />
         <RadioButton
             android:text="Extremely"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/radioButton15"
-            android:layout_below="@+id/radioButton14" />
+            android:layout_below="@+id/radioButton14"
+            app:buttonTint="@color/colorPrimary" />
 
 
 

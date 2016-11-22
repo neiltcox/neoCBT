@@ -2,38 +2,106 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-        <SeekBar
-            android:layout_width="368dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/seekBar5"
-            android:layout_above="@+id/button"
-            android:layout_centerHorizontal="true"
-            tools:layout_editor_absoluteY="175dp"
-            tools:layout_editor_absoluteX="8dp" />
+    <View android:id="@+id/fakeView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"/>
 
-        <Button
-            android:text="Play/Pause"
-            android:onClick="playpauseAudio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
-            tools:layout_editor_absoluteY="209dp"
-            tools:layout_editor_absoluteX="84dp" />
+    <Button
+        android:text="Play/Pause"
+        android:onClick="playpauseAudio"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        tools:layout_editor_absoluteY="209dp"
+        tools:layout_editor_absoluteX="84dp"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@id/fakeView"/>
 
-        <Button
-            android:text="Restart"
-            android:onClick="restartAudio"
-            android:layout_width="wrap_content"
+    <Button
+        android:onClick="restartAudio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        tools:layout_editor_absoluteY="209dp"
+        tools:layout_editor_absoluteX="192dp"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="@color/colorPrimary"
+        android:text="Restart"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/fakeView" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:id="@+id/seekBar5"
+        tools:layout_editor_absoluteY="175dp"
+        tools:layout_editor_absoluteX="8dp"
+        style="@android:style/Widget.Material.Light.SeekBar"
+        android:thumb="@drawable/seekbar_thumb_green_normal"
+        android:layout_above="@+id/button"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Homework 1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView7"
+        android:textStyle="normal|bold"
+        android:textSize="18sp"
+        android:textColor="#4b966e"
+        android:layout_marginTop="11dp"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="Introduction to Meditation and Body Scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView10"
+        android:layout_below="@+id/textView7"
+        android:layout_centerHorizontal="true" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="436dp"
+        tools:layout_editor_absoluteX="8dp"
+        android:layout_marginTop="72dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/scrollView4">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/button3"
-            android:layout_alignBaseline="@+id/button"
-            android:layout_alignBottom="@+id/button"
-            android:layout_toEndOf="@+id/button"
-            tools:layout_editor_absoluteY="209dp"
-            tools:layout_editor_absoluteX="192dp" />
+            android:orientation="vertical" >
+            <TextView
+                android:text="Today's meditation: 15 min body scan\n\n
+    • Now that you know what meditation is, we can practice by engaging in a 15 minute body scan.\n\n
+    • The body scan is a challenging meditation, but is an especially important practice for those with tinnitus.\n\n
+    • Follow along with the audio file as it takes you through the exploration of each body part.\n\n
+    • Try to focus your attention like shining a beam of light on each body part\n\n
+    • Your focus may bring discomfort and sensations you have never felt before. Be ready for this, and embrace it fully.\n\n
+    • This meditation is also great for the exploration of you tinnitus sound.\n\n
+    • Learn to explore the sound like you have never before and try to focus in on it instead of turning it away.\n\n
+    • Remember do not become discouraged! If you mind wanders or you become sleepy gently bring you focus and attention back to the audio.\n\n
+    • As with everything practice makes perfect. The first session maybe difficult but each subsequent session will become easier and more rewarding."
+                android:layout_width="0dp"
+                android:layout_height="458dp"
+                android:id="@+id/textView9"
+                tools:layout_editor_absoluteX="8dp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp" />
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
 
 </RelativeLayout>

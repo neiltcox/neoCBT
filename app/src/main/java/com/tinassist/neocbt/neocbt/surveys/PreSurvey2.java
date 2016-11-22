@@ -2,6 +2,8 @@ package com.tinassist.neocbt.neocbt.surveys;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +26,11 @@ public class PreSurvey2 extends Fragment {
     RadioButton rdo13;
     RadioButton rdo14;
     RadioButton rdo15;
+
+    Fragment nextFragment1 = new Pre2Result1();
+    Fragment nextFragment2 = new Pre2Result2();
+    Fragment nextFragment3 = new Pre2Result3();
+
     public int total2 = 0;
     public int counter2 = 0;
     public int tempint2 = 0;
@@ -48,55 +55,74 @@ public class PreSurvey2 extends Fragment {
         // Required empty public constructor
     }
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.pre_survey2, container, false);
-        btn = (Button) btn.findViewById(R.id.button10);
-        btn = (Button) v.findViewById(R.id.button);
-        btn.setOnClickListener(btnListener);
+        View v = inflater.inflate(R.layout.post_survey2, container, false);
+        btn = (Button) v.findViewById(R.id.button10);
+        btn.setOnClickListener(btnListener2);
         rdo11 = (RadioButton) v.findViewById(R.id.radioButton11);
-        rdo11.setOnClickListener(btnListener);
+        rdo11.setOnClickListener(btnListener2);
         rdo12 = (RadioButton) v.findViewById(R.id.radioButton12);
-        rdo12.setOnClickListener(btnListener);
+        rdo12.setOnClickListener(btnListener2);
         rdo13 = (RadioButton) v.findViewById(R.id.radioButton13);
-        rdo13.setOnClickListener(btnListener);
+        rdo13.setOnClickListener(btnListener2);
         rdo14 = (RadioButton) v.findViewById(R.id.radioButton14);
-        rdo14.setOnClickListener(btnListener);
+        rdo14.setOnClickListener(btnListener2);
         rdo15 = (RadioButton) v.findViewById(R.id.radioButton15);
-        txtViewq = (TextView) txtViewq.findViewById(R.id.question2);
+        rdo15.setOnClickListener(btnListener2);
+        txtViewq = (TextView) v.findViewById(R.id.question2);
         txtViewq.setEnabled(true);
         return v;
     }
 
-    public View.OnClickListener btnListener = new View.OnClickListener() {
+    public View.OnClickListener btnListener2 = new View.OnClickListener() {
         @Override
         public void onClick(View v){
             switch(v.getId()) {
-                case R.id.button:
-                    counter2++;
-                    if (counter2 < 17)
+                case R.id.button10:
+                    if (counter2 < 16)
                     {
-                        txtViewq.setText(anArray[counter2]);
+                        counter2++;
+                        String q = "Have you experienced " + anArray[counter2];
+                        txtViewq.setText(q);
                         total2 += tempint2;
                         tempint2 = 0;
-                        counter2++;
                     }
                     else
                     {
                         if (total2 < 30)
                         {
-                            //link to pre2result1
+                            FragmentManager fragmentManager = getFragmentManager();
+                            FragmentTransaction transaction = fragmentManager.beginTransaction();
+                            transaction.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit);
+                            transaction.replace(R.id.frame_container, nextFragment1, "CURRENT_FRAGMENT");
+                            transaction.addToBackStack(null);
+                            transaction.commit();
                         }
                         else if (total2 < 45)
                         {
-                            //link to pre2result2
+                            FragmentManager fragmentManager = getFragmentManager();
+                            FragmentTransaction transaction = fragmentManager.beginTransaction();
+                            transaction.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit);
+                            transaction.replace(R.id.frame_container, nextFragment2, "CURRENT_FRAGMENT");
+                            transaction.addToBackStack(null);
+                            transaction.commit();
                         }
                         else
                         {
-                            //link to pre2result3
+                            FragmentManager fragmentManager = getFragmentManager();
+                            FragmentTransaction transaction = fragmentManager.beginTransaction();
+                            transaction.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit);
+                            transaction.replace(R.id.frame_container, nextFragment3, "CURRENT_FRAGMENT");
+                            transaction.addToBackStack(null);
+                            transaction.commit();
                         }
                     }
                     break;

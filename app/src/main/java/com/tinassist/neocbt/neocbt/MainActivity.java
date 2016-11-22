@@ -15,6 +15,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import com.tinassist.neocbt.neocbt.surveys.PostSurvey1;
@@ -110,9 +111,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.pre_survey2) {
             fragment = new PreSurvey2();
         } else if (id == R.id.post_survey1) {
-            fragment = new PostSurvey1();
+            fragment = new PreSurvey1();
         } else if (id == R.id.post_survey2) {
-            fragment = new PostSurvey2();
+            fragment = new PreSurvey2();
         }
 
         /*if (fragment != null) {

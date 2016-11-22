@@ -3,6 +3,8 @@ package com.tinassist.neocbt.neocbt.surveys;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.tinassist.neocbt.neocbt.R;
+import com.tinassist.neocbt.neocbt.week1.W1P2;
 
 /**
  * Created by novap on 11/14/2016.
@@ -23,6 +26,10 @@ public class PreSurvey1 extends Fragment {
     RadioButton rdo1;
     RadioButton rdo2;
     RadioButton rdo3;
+
+    Fragment nextFragment1 = new Pre1Result1();
+    Fragment nextFragment2 = new Pre1Result2();
+    Fragment nextFragment3 = new Pre1Result3();
 
     public int total1 = 0;
     public int counter1 = 0;
@@ -52,17 +59,6 @@ public class PreSurvey1 extends Fragment {
             "23. Do you feel that you can no longer cope with your tinnitus?",
             "24. Does your tinnitus get worse when you are under stress?",
             "25. Does your tinnitus make you feel insecure?"};
-    private String[] results = {"You rsponsese put you in the slight to mild tinnitus handicapped group. " +
-            "This is the lowerst level of handicap based on this survey. Our program will help you learn " +
-            "how to mask your tinnitus by environmental sounds and easily forget it with your activities.",
-            "Your responses put you in the moderately tinnitus handicapped group. Your tinnitus might " +
-                    "interfere with your well being and daily life. Our program will help you learn techniques " +
-                    "to manage your tinnitues and take your attention away from it.",
-            "Your responses put you in the severly tinnitus handicapped group. Your tinnitus is always " +
-                    "heard, leads to disturbed sleep patterns and can interfere with daily activities. We recommend " +
-                    "that you see a therapist in this regard. Our program will help you learn techniques " +
-                    "to manage your tinnitus and take your attention away from it. However, it cannot replace " +
-                    "the help of a therapist."};
     public PreSurvey1() {
         // Required empty public constructor
     }
@@ -96,27 +92,41 @@ public class PreSurvey1 extends Fragment {
         public void onClick(View v){
             switch(v.getId()) {
                 case R.id.button:
-                    counter1++;
-                    if (counter1 < 25)
+                    if (counter1 < 24)
                     {
+                        counter1++;
                         txtViewq.setText(anArray[counter1]);
                         total1 += tempint1;
                         tempint1 = 0;
-                        counter1++;
                     }
                     else
                     {
                         if (total1 < 37)
                         {
-                            //link to pre1result1
+                            FragmentManager fragmentManager = getFragmentManager();
+                            FragmentTransaction transaction = fragmentManager.beginTransaction();
+                            transaction.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit);
+                            transaction.replace(R.id.frame_container, nextFragment1, "CURRENT_FRAGMENT");
+                            transaction.addToBackStack(null);
+                            transaction.commit();
                         }
                         else if (total1 < 57)
                         {
-                            //link to pre1result2
+                            FragmentManager fragmentManager = getFragmentManager();
+                            FragmentTransaction transaction = fragmentManager.beginTransaction();
+                            transaction.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit);
+                            transaction.replace(R.id.frame_container, nextFragment2, "CURRENT_FRAGMENT");
+                            transaction.addToBackStack(null);
+                            transaction.commit();
                         }
                         else
                         {
-                            //link to pre1result3
+                            FragmentManager fragmentManager = getFragmentManager();
+                            FragmentTransaction transaction = fragmentManager.beginTransaction();
+                            transaction.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit);
+                            transaction.replace(R.id.frame_container, nextFragment3, "CURRENT_FRAGMENT");
+                            transaction.addToBackStack(null);
+                            transaction.commit();
                         }
                     }
                     break;
