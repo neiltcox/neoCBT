@@ -9,8 +9,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView13"
-        tools:textSize="24sp"
-        android:layout_marginStart="22dp"
+        android:textSize="30sp"
+        android:textColor="@android:color/black"
+        android:layout_marginLeft="25dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp" />
 </RelativeLayout>
