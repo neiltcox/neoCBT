@@ -4,9 +4,12 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.SeekBar;
 
 import com.tinassist.neocbt.neocbt.R;
@@ -16,7 +19,7 @@ import com.tinassist.neocbt.neocbt.R;
  */
 
 
-public class HWP7 extends Fragment {
+public class HWP7 extends Fragment{
 
 
     private MediaPlayer mySound;
@@ -35,15 +38,34 @@ public class HWP7 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.w1hwp7, container, false);
         mySound = MediaPlayer.create(getActivity(), R.raw.weekoneaudio);
-        mySeekbar = (SeekBar)getView().findViewById(R.id.seekBar5);
+        mySeekbar = (SeekBar)v.findViewById(R.id.seekBar5);
         mySeekbar.setOnSeekBarChangeListener(seekBarOnSeekChangeListener);
         mySeekbar.setMax(mySound.getDuration());
+        Button button = (Button) v.findViewById(R.id.button);
+        button.setOnClickListener(btnListener);
+        Button button3 = (Button) v.findViewById(R.id.button3);
+        button3.setOnClickListener(btnListener);
         update();
         
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.w1hwp7, container, false);
+        return v;
     }
+
+    private View.OnClickListener btnListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.button:
+                    playpauseAudio(v);
+                    break;
+                case R.id.button3:
+                    restartAudio(v);
+                    break;
+            }
+        }
+    };
 
     Runnable run = new Runnable() {
         @Override
