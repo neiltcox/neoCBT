@@ -9,12 +9,11 @@ import android.view.ViewGroup;
 import com.tinassist.neocbt.neocbt.R;
 
 /**
- * Created by novap on 11/14/2016.
+ * Created by novap on 11/21/2016.
  */
 
-public class PreSurvey3 extends Fragment {
-
-    public PreSurvey3() {
+public class Post2Result2 extends Fragment {
+    public Post2Result2() {
         // Required empty public constructor
     }
 
@@ -28,6 +27,6 @@ public class PreSurvey3 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.pre_survey3, container, false);
+        return inflater.inflate(R.layout.post2_result2, container, false);
     }
 }
