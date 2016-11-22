@@ -1,6 +1,7 @@
 package com.tinassist.neocbt.neocbt.surveys;
 
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,9 +20,13 @@ public class PreSurvey1 extends Fragment {
 
     Button btn;
     TextView txtViewq;
-    private int total = 0;
-    private int counter = 0;
-    private int tempint = 0;
+    RadioButton rdo1;
+    RadioButton rdo2;
+    RadioButton rdo3;
+
+    public int total1 = 0;
+    public int counter1 = 0;
+    public int tempint1 = 0;
     private String[] anArray = {"1. Because of your tinnitus, is it difficult for you to concentrate?",
             "2. Does the loudness of your tinnitus make it difficult for you to hear people?",
             "3. Does your tinnitus make you angry?",
@@ -64,50 +69,67 @@ public class PreSurvey1 extends Fragment {
 
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        btn = (Button) btn.findViewById(R.id.button);
-        txtViewq = (TextView) txtViewq.findViewById(R.id.question);
-        txtViewq.setEnabled(true);
+        View v = inflater.inflate(R.layout.post_survey1, container, false);
+        btn = (Button) v.findViewById(R.id.button);
+        btn.setOnClickListener(btnListener);
+        rdo1 = (RadioButton) v.findViewById(R.id.radioButton);
+        rdo1.setOnClickListener(btnListener);
+        rdo2 = (RadioButton) v.findViewById(R.id.radioButton2);
+        rdo2.setOnClickListener(btnListener);
+        rdo3 = (RadioButton) v.findViewById(R.id.radioButton3);
+        rdo3.setOnClickListener(btnListener);
 
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                total += tempint;
-                counter++;
-                if (counter < 25)
-                {
-                    txtViewq.setText(anArray[counter]);
-                    tempint = 0;
-                }
-                //else
-                //{
-                //
-                //}
-            }
-        });
-        return inflater.inflate(R.layout.post_survey1, container, false);
+        txtViewq = (TextView) v.findViewById(R.id.question);
+        txtViewq.setEnabled(true);
+        return v;
     };
 
-    public void selectOption(View view) {
-        boolean checked = ((RadioButton) view).isChecked();
-        switch (view.getId()) {
-            case R.id.radioButton:
-                if (checked) {
-                    tempint = 4;
-                }
-                break;
-            case R.id.radioButton2:
-                if (checked) {
-                    tempint = 2;
-                }
-                break;
-            case R.id.radioButton3:
-                if (checked) {
-                    tempint = 0;
-                }
-                break;
+    public View.OnClickListener btnListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v){
+            switch(v.getId()) {
+                case R.id.button:
+                    counter1++;
+                    if (counter1 < 25)
+                    {
+                        txtViewq.setText(anArray[counter1]);
+                        total1 += tempint1;
+                        tempint1 = 0;
+                        counter1++;
+                    }
+                    else
+                    {
+                        if (total1 < 37)
+                        {
+                            //link to pre1result1
+                        }
+                        else if (total1 < 57)
+                        {
+                            //link to pre1result2
+                        }
+                        else
+                        {
+                            //link to pre1result3
+                        }
+                    }
+                    break;
+                case R.id.radioButton:
+                    tempint1 = 4;
+                    break;
+                case R.id.radioButton2:
+                    tempint1 = 2;
+                    break;
+                case R.id.radioButton3:
+                    tempint1 = 0;
+                    break;
+            }
         }
-    }
+    };
 }

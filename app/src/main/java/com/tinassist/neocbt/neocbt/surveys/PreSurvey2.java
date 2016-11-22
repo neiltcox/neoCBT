@@ -19,9 +19,14 @@ public class PreSurvey2 extends Fragment {
 
     Button btn;
     TextView txtViewq;
-    private int total = 0;
-    private int counter = 0;
-    private int tempint = 0;
+    RadioButton rdo11;
+    RadioButton rdo12;
+    RadioButton rdo13;
+    RadioButton rdo14;
+    RadioButton rdo15;
+    public int total2 = 0;
+    public int counter2 = 0;
+    public int tempint2 = 0;
     private String[] anArray = {"1.Repeated, disturbing memories, thoughts, or images of a stressful experience from the past?",
     "2. Repeated, disturbing dreams of a stressful experience from the past?",
     "3. Suddenly acting or feeling as if a stressful experience were happening again (as if you were reliving it)?",
@@ -48,55 +53,69 @@ public class PreSurvey2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        View v = inflater.inflate(R.layout.pre_survey2, container, false);
         btn = (Button) btn.findViewById(R.id.button10);
+        btn = (Button) v.findViewById(R.id.button);
+        btn.setOnClickListener(btnListener);
+        rdo11 = (RadioButton) v.findViewById(R.id.radioButton11);
+        rdo11.setOnClickListener(btnListener);
+        rdo12 = (RadioButton) v.findViewById(R.id.radioButton12);
+        rdo12.setOnClickListener(btnListener);
+        rdo13 = (RadioButton) v.findViewById(R.id.radioButton13);
+        rdo13.setOnClickListener(btnListener);
+        rdo14 = (RadioButton) v.findViewById(R.id.radioButton14);
+        rdo14.setOnClickListener(btnListener);
+        rdo15 = (RadioButton) v.findViewById(R.id.radioButton15);
         txtViewq = (TextView) txtViewq.findViewById(R.id.question2);
         txtViewq.setEnabled(true);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                total += tempint;
-                counter++;
-                if (counter < 17)
-                {
-                    txtViewq.setText(anArray[counter]);
-                    tempint = 0;
-                }
-                //else
-                //{
-                //
-                //}
+        return v;
+    }
+
+    public View.OnClickListener btnListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v){
+            switch(v.getId()) {
+                case R.id.button:
+                    counter2++;
+                    if (counter2 < 17)
+                    {
+                        txtViewq.setText(anArray[counter2]);
+                        total2 += tempint2;
+                        tempint2 = 0;
+                        counter2++;
+                    }
+                    else
+                    {
+                        if (total2 < 30)
+                        {
+                            //link to pre2result1
+                        }
+                        else if (total2 < 45)
+                        {
+                            //link to pre2result2
+                        }
+                        else
+                        {
+                            //link to pre2result3
+                        }
+                    }
+                    break;
+                case R.id.radioButton11:
+                    tempint2 = 1;
+                    break;
+                case R.id.radioButton12:
+                    tempint2 = 2;
+                    break;
+                case R.id.radioButton13:
+                    tempint2 = 3;
+                    break;
+                case R.id.radioButton14:
+                    tempint2 = 4;
+                    break;
+                case R.id.radioButton15:
+                    tempint2 = 5;
+                    break;
             }
-        });
-        return inflater.inflate(R.layout.pre_survey2, container, false);
-    }
-    public void selectOption(View view) {
-        boolean checked = ((RadioButton) view).isChecked();
-        switch (view.getId()) {
-            case R.id.radioButton11:
-                if (checked) {
-                    tempint = 1;
-                }
-                break;
-            case R.id.radioButton12:
-                if (checked) {
-                    tempint = 2;
-                }
-                break;
-            case R.id.radioButton13:
-                if (checked) {
-                    tempint = 3;
-                }
-                break;
-            case R.id.radioButton14:
-                if (checked) {
-                    tempint = 4;
-                }
-                break;
-            case R.id.radioButton15:
-                if (checked){
-                    tempint = 5;
-                }
-                break;
         }
-    }
+    };
 }
