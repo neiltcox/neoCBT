@@ -16,6 +16,8 @@
         android:layout_height="wrap_content"
         android:text="1. Because of your tinnitus, is it difficult for you to concentrate?"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:layout_marginLeft = "20dp"
+        android:layout_marginRight = "20dp"
         android:id="@+id/question"
         tools:textColor="@android:color/background_dark"
         android:textColor="@android:color/background_dark"
