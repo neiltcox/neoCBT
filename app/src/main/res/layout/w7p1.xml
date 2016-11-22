@@ -1,9 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
+        android:text="Reduction of Worries and Stress Module"
+        android:layout_width="331dp"
+        android:layout_height="32dp"
+        android:id="@+id/textView62"
+        android:textStyle="normal|bold"
+        android:textSize="18sp"
+        android:lineSpacingExtra="2sp"
+        android:textColor="#4b966e"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="16dp" />
+
+    <TextView
+        android:text="Part 1: Worries and stress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This is week 7 page 1" />
-</FrameLayout>
+        android:id="@+id/textView63"
+        android:textStyle="normal|italic"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="56dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:text="Chronic worrying and stress is debilitating — many people complain that they have worried all their lives.\n\nIn this module we will examine a variety of techniques that are helpful in reducing the amount of worry and its negative impact.\n\nOur Goal in this Module:\n\n    Teach a variety of techniques that are helpful in reducing the amount of worry and its negative impact.\n\n    Teach methods you might like to use help you relax and to improve concentration. This includes three different methods."
+        android:layout_width="285dp"
+        android:layout_height="383dp"
+        android:id="@+id/textView65"
+        android:lineSpacingExtra="2sp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="112dp"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>
