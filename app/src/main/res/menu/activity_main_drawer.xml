@@ -9,11 +9,21 @@
             android:checked="true"/>
 
         <item
-            android:title="Pre Survey"
-            android:id="@+id/pre_survey"
-            android:checkable="false"
-            android:visible="false"
-            android:enabled="false" />
+            android:title="Pre Survey 1"
+            android:id="@+id/pre_survey1" />
+        <item
+            android:title="Pre Survey 2"
+            android:id="@+id/pre_survey2" />
+        <item
+            android:title="Pre Survey 3"
+            android:id="@+id/pre_survey3" />
+        <item
+            android:title="Pre Survey 4"
+            android:id="@+id/pre_survey4" />
+        <item
+            android:title="Pre Survey 5"
+            android:id="@+id/pre_survey5" />
+
         <item
             android:id="@+id/nav_week1"
             android:title="Week 1" />
@@ -38,6 +48,22 @@
         <item
             android:id="@+id/nav_week8"
             android:title="Week 8" />
+
+        <item
+            android:title="Post Survey 1"
+            android:id="@+id/post_survey1" />
+        <item
+            android:title="Post Survey 2"
+            android:id="@+id/post_survey2" />
+        <item
+            android:title="Post Survey 3"
+            android:id="@+id/post_survey3" />
+        <item
+            android:title="Post Survey 4"
+            android:id="@+id/post_survey4" />
+        <item
+            android:title="Post Survey 5"
+            android:id="@+id/post_survey5" />
     </group>
 
     <!--<item android:title="Program">
