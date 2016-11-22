@@ -66,13 +66,6 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -112,7 +105,6 @@ public class MainActivity extends AppCompatActivity
             fragment = new W8P1();
         } else if (id == R.id.home) {
             fragment = new Home();
-            scheduleNotification(getNotification(), 60000)
         } else if (id == R.id.pre_survey1) {
             fragment = new PreSurvey1();
         } else if (id == R.id.pre_survey2) {
