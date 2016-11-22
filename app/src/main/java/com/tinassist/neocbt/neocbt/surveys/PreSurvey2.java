@@ -87,7 +87,7 @@ public class PreSurvey2 extends Fragment {
         public void onClick(View v){
             switch(v.getId()) {
                 case R.id.button10:
-                    if (counter2 < 17)
+                    if (counter2 < 16)
                     {
                         counter2++;
                         String q = "Have you experienced " + anArray[counter2];
