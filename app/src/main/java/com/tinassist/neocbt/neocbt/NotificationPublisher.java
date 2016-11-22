@@ -13,7 +13,6 @@ public class NotificationPublisher extends BroadcastReceiver {
 
     public void onReceive(Context context, Intent intent) {
 
-
         NotificationManager notificationManager = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
 
         Notification notification = intent.getParcelableExtra(NOTIFICATION);
