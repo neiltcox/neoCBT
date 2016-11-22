@@ -1,6 +1,12 @@
 package com.tinassist.neocbt.neocbt;
 
+import android.app.AlarmManager;
+import android.app.Notification;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -12,7 +18,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.tinassist.neocbt.neocbt.surveys.PostSurvey1;
+import com.tinassist.neocbt.neocbt.surveys.PostSurvey2;
+import com.tinassist.neocbt.neocbt.surveys.PostSurvey3;
+import com.tinassist.neocbt.neocbt.surveys.PostSurvey4;
+import com.tinassist.neocbt.neocbt.surveys.PostSurvey5;
 import com.tinassist.neocbt.neocbt.surveys.PreSurvey1;
+import com.tinassist.neocbt.neocbt.surveys.PreSurvey2;
+import com.tinassist.neocbt.neocbt.surveys.PreSurvey3;
+import com.tinassist.neocbt.neocbt.surveys.PreSurvey4;
+import com.tinassist.neocbt.neocbt.surveys.PreSurvey5;
 import com.tinassist.neocbt.neocbt.week1.W1P1;
 import com.tinassist.neocbt.neocbt.week2.W2P1;
 import com.tinassist.neocbt.neocbt.week3.W3P1;
@@ -22,8 +37,9 @@ import com.tinassist.neocbt.neocbt.week6.W6P1;
 import com.tinassist.neocbt.neocbt.week7.W7P1;
 import com.tinassist.neocbt.neocbt.week8.W8P1;
 
+
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +58,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         onNavigationItemSelected(navigationView.getMenu().getItem(0));
+
     }
 
     @Override
@@ -101,8 +118,26 @@ public class MainActivity extends AppCompatActivity
             fragment = new W8P1();
         } else if (id == R.id.home) {
             fragment = new Home();
-        } else if (id == R.id.pre_survey) {
+        } else if (id == R.id.pre_survey1) {
             fragment = new PreSurvey1();
+        } else if (id == R.id.pre_survey2) {
+            fragment = new PreSurvey2();
+        } else if (id == R.id.pre_survey3) {
+            fragment = new PreSurvey3();
+        } else if (id == R.id.pre_survey4) {
+            fragment = new PreSurvey4();
+        } else if (id == R.id.pre_survey5) {
+            fragment = new PreSurvey5();
+        } else if (id == R.id.post_survey1) {
+            fragment = new PostSurvey1();
+        } else if (id == R.id.post_survey2) {
+            fragment = new PostSurvey2();
+        } else if (id == R.id.post_survey3) {
+            fragment = new PostSurvey3();
+        } else if (id == R.id.post_survey4) {
+            fragment = new PostSurvey4();
+        } else if (id == R.id.post_survey5) {
+            fragment = new PostSurvey5();
         }
 
         /*if (fragment != null) {
@@ -112,7 +147,8 @@ public class MainActivity extends AppCompatActivity
 
         if (fragment != null) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.frame_container, fragment);
+            transaction.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit);
+            transaction.replace(R.id.frame_container, fragment, "CURRENT_FRAGMENT");
             transaction.addToBackStack(null);
             transaction.commit();
         }
@@ -121,4 +157,37 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    private void scheduleNotification(Notification notification, int delay) {
+        Intent notificationIntent = new Intent(this, NotificationPublisher.class);
+        notificationIntent.putExtra(NotificationPublisher.NOTIFICATION_ID, 1);
+        notificationIntent.putExtra(NotificationPublisher.NOTIFICATION, notification);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        long futureInMillis = SystemClock.elapsedRealtime() + delay;
+        AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, SystemClock.elapsedRealtime(),
+                60000, pendingIntent);
+        //alarmManager.set(AlarmManager.RTC_WAKEUP, futureInMillis, pendingIntent);
+    }
+
+    public Notification getNotification() {
+
+        Notification.Builder builder = new Notification.Builder(this);
+        builder.setContentTitle("Meditation Time!");
+        builder.setContentText("It's time for a new mindful breathing exercise!");
+        builder.setSmallIcon(R.drawable.ear1);
+        builder.setColor(0x4b966e);
+        return builder.build();
+    }
+
+    //public void original_notification () {
+      //  NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this);
+        //mBuilder.setSmallIcon(R.drawable.logo1);
+        //mBuilder.setContentTitle("Notification Alert, Click me!");
+        //mBuilder.setContentText("Hi, This is Android Notification Detail!");
+
+        //NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        //mNotificationManager.notify(1, mBuilder.build());
+    //}
 }
