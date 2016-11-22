@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent">
-
-    <TextView
-        android:text="Please rate your tinnitus today."
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="41dp"
-        android:layout_marginTop="39dp"
-        android:id="@+id/textView4" />
 
     <RadioGroup
         android:layout_width="wrap_content"
@@ -45,4 +36,15 @@
             android:layout_below="@+id/buffer2" />
 
     </RadioGroup>
+
+    <TextView
+        android:text="Please rate your tinnitus today."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        tools:textSize="36sp"
+        android:layout_marginTop="87dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="33dp" />
 </RelativeLayout>
