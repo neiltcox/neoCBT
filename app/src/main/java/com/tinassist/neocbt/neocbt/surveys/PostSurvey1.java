@@ -81,7 +81,7 @@ public class PostSurvey1 extends Fragment {
                     txtViewq.setText(anArray[counter]);
                     tempint = 0;
                 }
-                //else
+                //elsez
                 //{
                 //    pass;
                 //}
