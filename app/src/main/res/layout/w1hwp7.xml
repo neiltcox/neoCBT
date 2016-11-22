@@ -72,7 +72,7 @@
         android:layout_centerHorizontal="true" />
 
     <ScrollView
-        android:layout_width="368dp"
+        android:layout_width="match_parent"
         android:layout_height="436dp"
         tools:layout_editor_absoluteX="8dp"
         android:layout_marginTop="72dp"
@@ -84,24 +84,23 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
             <TextView
-                android:text="Today's meditation: 15 min body scan\n
-    • Now that you know what meditation is, we can practice by engaging in a 15 minute body scan.\n
-    • The body scan is a challenging meditation, but is an especially important practice for those with tinnitus.\n
-    • Follow along with the audio file as it takes you through the exploration of each body part.\n
-    • Try to focus your attention like shining a beam of light on each body part\n
-    • Your focus may bring discomfort and sensations you have never felt before. Be ready for this,and embrace it fully.\n
-    • This meditation is also great for the exploration of you tinnitus sound.\n
-    • Learn to explore the sound like you have never before and try to focus in on it instead of turning it away.\n
-    • Remember do not become discouraged! If you mind wanders or you become sleepy gently bring you focus and attention back to the audio.\n
+                android:text="Today's meditation: 15 min body scan\n\n
+    • Now that you know what meditation is, we can practice by engaging in a 15 minute body scan.\n\n
+    • The body scan is a challenging meditation, but is an especially important practice for those with tinnitus.\n\n
+    • Follow along with the audio file as it takes you through the exploration of each body part.\n\n
+    • Try to focus your attention like shining a beam of light on each body part\n\n
+    • Your focus may bring discomfort and sensations you have never felt before. Be ready for this, and embrace it fully.\n\n
+    • This meditation is also great for the exploration of you tinnitus sound.\n\n
+    • Learn to explore the sound like you have never before and try to focus in on it instead of turning it away.\n\n
+    • Remember do not become discouraged! If you mind wanders or you become sleepy gently bring you focus and attention back to the audio.\n\n
     • As with everything practice makes perfect. The first session maybe difficult but each subsequent session will become easier and more rewarding."
-                android:layout_width="305dp"
-                android:layout_height="489dp"
+                android:layout_width="0dp"
+                android:layout_height="458dp"
                 android:id="@+id/textView9"
-                android:textSize="16sp"
-                tools:layout_editor_absoluteX="40dp"
-                android:lineSpacingExtra="4sp"
+                tools:layout_editor_absoluteX="8dp"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteY="0dp" />
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp" />
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 
