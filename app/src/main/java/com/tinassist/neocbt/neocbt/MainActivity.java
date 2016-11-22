@@ -1,6 +1,12 @@
 package com.tinassist.neocbt.neocbt;
 
+import android.app.AlarmManager;
+import android.app.Notification;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -19,10 +25,10 @@ import com.tinassist.neocbt.neocbt.surveys.PreSurvey2;
 import com.tinassist.neocbt.neocbt.week1.W1P1;
 import com.tinassist.neocbt.neocbt.week2.W2P1;
 import com.tinassist.neocbt.neocbt.week3.W3P1;
-import com.tinassist.neocbt.neocbt.week4.W4P1;
-import com.tinassist.neocbt.neocbt.week5.W5P1;
-import com.tinassist.neocbt.neocbt.week6.W6P1;
-import com.tinassist.neocbt.neocbt.week7.W7P1;
+import com.tinassist.neocbt.neocbt.week4.W4P0;
+import com.tinassist.neocbt.neocbt.week5.W5P0;
+import com.tinassist.neocbt.neocbt.week6.W6P0;
+import com.tinassist.neocbt.neocbt.week7.W7P0;
 import com.tinassist.neocbt.neocbt.week8.W8P1;
 
 
@@ -95,17 +101,18 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_week3) {
             fragment = new W3P1();
         } else if (id == R.id.nav_week4) {
-            fragment = new W4P1();
+            fragment = new W4P0();
         } else if (id == R.id.nav_week5) {
-            fragment = new W5P1();
+            fragment = new W5P0();
         } else if (id == R.id.nav_week6) {
-            fragment = new W6P1();
+            fragment = new W6P0();
         } else if (id == R.id.nav_week7) {
-            fragment = new W7P1();
+            fragment = new W7P0();
         } else if (id == R.id.nav_week8) {
             fragment = new W8P1();
         } else if (id == R.id.home) {
             fragment = new Home();
+            scheduleNotification(getNotification(), 60000)
         } else if (id == R.id.pre_survey1) {
             fragment = new PreSurvey1();
         } else if (id == R.id.pre_survey2) {
