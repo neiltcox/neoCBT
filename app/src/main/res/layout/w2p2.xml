@@ -14,14 +14,12 @@
         android:textStyle="normal|bold"
         android:textColor="#4b966e"
         android:textSize="18sp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="16dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <TextView
         android:text="Mechanism of Tinnitus"
@@ -29,20 +27,31 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView29"
         android:textStyle="normal|italic"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginRight="16dp"
         android:layout_marginStart="16dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:text="Next"
+        android:layout_width="411dp"
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="@color/colorPrimary"
+        tools:layout_editor_absoluteX="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="544dp"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
-        android:layout_width="376dp"
-        android:layout_height="456dp"
-        tools:layout_editor_absoluteX="0dp"
-        android:layout_marginTop="88dp"
+        android:layout_width="395dp"
+        android:layout_height="628dp"
+        tools:layout_editor_absoluteX="8dp"
+        android:layout_marginTop="80dp"
         app:layout_constraintTop_toTopOf="parent">
 
         <android.support.constraint.ConstraintLayout
@@ -52,83 +61,52 @@
 
             <TextView
                 android:text="The ear is a fairly complex organ that converts sound waves into brain signals. Cochlea (inner ear hearing organ), is a snail like structure that does this conversion. The cochlea works by transmitting different frequencies from the point where it receives the frequency to the corresponding point in the brain. The brain and cochlea are arranged exactly alike, with the frequencies (pitches) that are next to each other on the cochlea being exactly next to each other in the brain as well."
-                android:layout_width="1dp"
-                android:layout_height="1dp"
-                tools:layout_editor_absoluteX="0dp"
-                android:id="@+id/textView34"
-                android:layout_marginTop="16dp"
-                app:layout_constraintTop_toTopOf="parent"
-                android:textAlignment="viewStart"
-                android:lineSpacingExtra="2sp" />
+                android:layout_width="363dp"
+                android:layout_height="161dp"
+                android:id="@+id/textView12"
+                android:layout_marginStart="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:layout_width="1dp"
-                android:layout_height="1dp"
+                android:layout_width="394dp"
+                android:layout_height="122dp"
                 app:srcCompat="@drawable/w2p2_1"
                 tools:layout_editor_absoluteX="0dp"
-                android:id="@+id/imageView12"
-                android:layout_marginTop="188dp"
+                android:id="@+id/imageView13"
+                android:layout_marginTop="168dp"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:text="Tinnitus is caused when a particular frequency range in the cochlea is damaged and no longer sends information to the brain. This may seem strange at first as tinnitus is caused by the brain NOT receiving signals rather than receiving too much."
-                android:layout_width="1dp"
-                android:layout_height="1dp"
-                tools:layout_editor_absoluteX="0dp"
-                android:id="@+id/textView35"
-                android:layout_marginTop="324dp"
+                android:layout_width="363dp"
+                android:layout_height="87dp"
+                android:id="@+id/textView14"
+                android:layout_marginTop="288dp"
                 app:layout_constraintTop_toTopOf="parent"
-                android:lineSpacingExtra="2sp" />
+                android:layout_marginStart="16dp"
+                app:layout_constraintLeft_toLeftOf="parent" />
 
             <ImageView
-                android:layout_width="1dp"
-                android:layout_height="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 app:srcCompat="@drawable/w2p2_2"
                 tools:layout_editor_absoluteX="0dp"
-                android:id="@+id/imageView12"
-                android:layout_marginTop="432dp"
+                android:id="@+id/imageView13"
+                android:layout_marginTop="376dp"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:text="Your brain is incredible and is very, very good at reusing space. For example, if you are blind your brain will often convert the areas traditionally used for image processing to instead process extra audio, smell, and taste sensations. In the case of tinnitus, your brain quickly recognizes that you no longer have a use for the space reserved for the frequencies that are damaged in your cochlea, so it reuses the space for other frequencies. The frequencies near the damaged frequencies are given extra processing power. So they become better at detecting patterns and also tend to spontaneously be more active. Unfortunately, that means they create the perception of the sound by having too much activity. The rest of the brain sees that there is activity in the hearing part and it assumes there is a sound there. This creates the perception of ringing."
-                android:layout_width="1dp"
-                android:layout_height="1dp"
-                tools:layout_editor_absoluteX="0dp"
-                android:id="@+id/textView35"
-                android:layout_marginTop="570dp"
+                android:layout_width="363dp"
+                android:layout_height="455dp"
+                android:id="@+id/textView15"
+                android:layout_marginTop="592dp"
                 app:layout_constraintTop_toTopOf="parent"
-                android:lineSpacingExtra="2sp" />
-
-            <TextView
-                android:text="This is where sound therapy can help."
-                android:layout_width="1dp"
-                android:layout_height="1dp"
-                android:textStyle="normal|bold"
-                android:textColor="#4b966e"
-                android:textSize="14sp"
-                tools:layout_editor_absoluteX="0dp"
-                android:id="@+id/textView35"
-                android:layout_marginTop="890dp"
-                app:layout_constraintTop_toTopOf="parent"
-                android:fontFamily="sans-serif" />
+                android:layout_marginStart="16dp"
+                app:layout_constraintLeft_toLeftOf="parent" />
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
-
-    <Button
-        android:text="Next"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/button"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:background="@color/colorPrimary"
-        tools:layout_constraintRight_creator="1"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        tools:layout_editor_absoluteY="0dp" />
-
 </android.support.constraint.ConstraintLayout>

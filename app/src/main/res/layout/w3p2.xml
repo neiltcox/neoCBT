@@ -37,13 +37,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="346dp"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/w3p1"
-        tools:layout_editor_absoluteX="0dp"
         android:id="@+id/imageView6"
-        android:layout_marginTop="104dp"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="112dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <TextView
         android:text="The AirDrive earphones sit in front of the ear and allow ambient sound to pass, and therefore, allowing user have conversation or watch tv."
@@ -56,25 +59,26 @@
         android:layout_marginStart="16dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintTop_toBottomOf="@+id/imageView6"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:textAlignment="center"
+        app:layout_constraintHorizontal_bias="0.44" />
 
     <Button
         android:text="Next"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:id="@+id/button"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         style="@style/Widget.AppCompat.Button.Colored"
         android:background="@color/colorPrimary"
-        tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="48dp"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="1.0" />
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginTop="544dp"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

@@ -13,7 +13,7 @@
     <Button
         android:text="Play/Pause"
         android:onClick="playpauseAudio"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:id="@+id/button"
         tools:layout_editor_absoluteY="209dp"
         tools:layout_editor_absoluteX="84dp"
@@ -27,7 +27,7 @@
     <Button
         android:onClick="restartAudio"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:id="@+id/button3"
         tools:layout_editor_absoluteY="209dp"
         tools:layout_editor_absoluteX="192dp"
@@ -69,7 +69,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView10"
         android:layout_below="@+id/textView7"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textStyle="normal|italic" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -94,8 +95,8 @@
     • Learn to explore the sound like you have never before and try to focus in on it instead of turning it away.\n\n
     • Remember do not become discouraged! If you mind wanders or you become sleepy gently bring you focus and attention back to the audio.\n\n
     • As with everything practice makes perfect. The first session maybe difficult but each subsequent session will become easier and more rewarding."
-                android:layout_width="0dp"
-                android:layout_height="458dp"
+                android:layout_width="399dp"
+                android:layout_height="588dp"
                 android:id="@+id/textView9"
                 tools:layout_editor_absoluteX="8dp"
                 app:layout_constraintTop_toTopOf="parent"
