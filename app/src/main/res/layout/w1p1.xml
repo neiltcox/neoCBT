@@ -77,7 +77,7 @@
 
     <Button
         android:text="Next"
-        android:layout_width="384dp"
+        android:layout_width="match_parent"
         android:layout_height="59dp"
         android:id="@+id/button"
         android:layout_alignParentBottom="true"
