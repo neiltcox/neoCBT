@@ -30,15 +30,19 @@ public class HWP7 extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
 
-        setContentView(R.layout.w1hwp1);
-
-        mySound = MediaPlayer.create(this, R.raw.weekoneaudio);
-        mySeekbar = (SeekBar)findViewById(R.id.seekbar5);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        mySound = MediaPlayer.create(getActivity(), R.raw.weekoneaudio);
+        mySeekbar = (SeekBar)getView().findViewById(R.id.seekBar5);
         mySeekbar.setOnSeekBarChangeListener(seekBarOnSeekChangeListener);
         mySeekbar.setMax(mySound.getDuration());
         update();
-
+        
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.w1hwp7, container, false);
     }
 
     Runnable run = new Runnable() {
@@ -102,10 +106,5 @@ public class HWP7 extends Fragment {
         mySound.release();
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.w1hwp7, container, false);
-    }
+
 }
