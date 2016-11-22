@@ -59,17 +59,6 @@ public class PreSurvey1 extends Fragment {
             "23. Do you feel that you can no longer cope with your tinnitus?",
             "24. Does your tinnitus get worse when you are under stress?",
             "25. Does your tinnitus make you feel insecure?"};
-    private String[] results = {"You rsponsese put you in the slight to mild tinnitus handicapped group. " +
-            "This is the lowerst level of handicap based on this survey. Our program will help you learn " +
-            "how to mask your tinnitus by environmental sounds and easily forget it with your activities.",
-            "Your responses put you in the moderately tinnitus handicapped group. Your tinnitus might " +
-                    "interfere with your well being and daily life. Our program will help you learn techniques " +
-                    "to manage your tinnitues and take your attention away from it.",
-            "Your responses put you in the severly tinnitus handicapped group. Your tinnitus is always " +
-                    "heard, leads to disturbed sleep patterns and can interfere with daily activities. We recommend " +
-                    "that you see a therapist in this regard. Our program will help you learn techniques " +
-                    "to manage your tinnitus and take your attention away from it. However, it cannot replace " +
-                    "the help of a therapist."};
     public PreSurvey1() {
         // Required empty public constructor
     }
@@ -103,13 +92,12 @@ public class PreSurvey1 extends Fragment {
         public void onClick(View v){
             switch(v.getId()) {
                 case R.id.button:
-                    counter1++;
-                    if (counter1 < 25)
+                    if (counter1 < 24)
                     {
+                        counter1++;
                         txtViewq.setText(anArray[counter1]);
                         total1 += tempint1;
                         tempint1 = 0;
-                        counter1++;
                     }
                     else
                     {

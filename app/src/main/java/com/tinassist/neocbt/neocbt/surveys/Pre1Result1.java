@@ -26,7 +26,8 @@ public class Pre1Result1 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.pre1_result1, container, false);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.pre1_result1, container, false);
+        return v;
     }
 }
