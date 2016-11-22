@@ -76,7 +76,6 @@ public class PreSurvey2 extends Fragment {
         public void onClick(View v){
             switch(v.getId()) {
                 case R.id.button:
-                    counter2++;
                     if (counter2 < 17)
                     {
                         txtViewq.setText(anArray[counter2]);
