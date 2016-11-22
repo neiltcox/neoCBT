@@ -1,12 +1,6 @@
 package com.tinassist.neocbt.neocbt;
 
-import android.app.AlarmManager;
-import android.app.Notification;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -33,7 +27,7 @@ import com.tinassist.neocbt.neocbt.week8.W8P1;
 
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener{
+        implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,8 +123,7 @@ public class MainActivity extends AppCompatActivity
 
         if (fragment != null) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit);
-            transaction.replace(R.id.frame_container, fragment, "CURRENT_FRAGMENT");
+            transaction.replace(R.id.frame_container, fragment);
             transaction.addToBackStack(null);
             transaction.commit();
         }
