@@ -17,7 +17,9 @@
         android:text="1. Because of your tinnitus, is it difficult for you to concentrate?"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:id="@+id/question"
-        tools:textColor="@android:color/background_dark" />
+        tools:textColor="@android:color/background_dark"
+        android:textColor="@android:color/background_dark"
+        android:textSize="36sp" />
 
     <Button
         android:text="NEXT"

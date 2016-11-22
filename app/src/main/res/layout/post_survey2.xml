@@ -31,12 +31,12 @@
         android:text="Have you experienced: 1.Repeated, disturbing memories, thoughts, or images of a stressful experience from the past?"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:id="@+id/question2"
-        tools:textColor="@android:color/background_dark"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="10dp"
-        android:textSize="24sp" />
+        android:textSize="30sp"
+        android:textColor="@android:color/background_dark" />
 
     <RadioGroup
         android:layout_width="wrap_content"
