@@ -64,7 +64,7 @@
                 android:text="• What is Tinnitus?\n    - How we hear vs. tinnitus hearing.\n    - Sounds of tinnitus\n    - How many people have tinnitus?\n\n• What causes Tinnitus?\n\n• How can Tinnitus affect you?\n    - Tinnitus can affect concentration\n    - Tinnitus can cause emotional reactions\n    - Tinnitus can disrupt sleep\n    - Why is tinnitus a problem?\n\n• Is there a cure?\n    - Methods to eliminate tinnitus\n        • Prescription Drugs\n        • Use of Sound\n    - Methods to manage tinnitus\n        • Cognitive-Behavioral Therapy\n        • Mindfulness Based Therapy"
                 android:layout_width="367dp"
                 android:layout_height="458dp"
-                tools:layout_editor_absoluteY="0dp"
+                tools:layout_editor_absoluteY="153dp"
                 android:id="@+id/textView9"
                 android:textSize="16sp"
                 android:lineSpacingExtra="4sp"
