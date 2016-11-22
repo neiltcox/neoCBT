@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
 
-</FrameLayout>
+    <TextView
+        android:text="Your responses put you in the severly tinnitus handicapped group. Your tinnitus is always heard, leads to disturbed sleep patterns and can interfere with daily activities. We recommend that you see a therapist in this regard. Our program will help you learn techniques to manage your tinnitus and take your attention away from it. However, it cannot replace the help of a therapist."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView13"
+        android:textSize="26sp"
+        android:textColor="@android:color/black"
+        android:layout_marginLeft="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"/>
+</RelativeLayout>
