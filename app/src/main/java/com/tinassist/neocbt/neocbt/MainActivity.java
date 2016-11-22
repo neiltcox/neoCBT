@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity
             fragment = new W8P1();
         } else if (id == R.id.home) {
             fragment = new Home();
-            scheduleNotification(getNotification(), 60000)
+            scheduleNotification(getNotification(), 60000);
         } else if (id == R.id.pre_survey1) {
             fragment = new PreSurvey1();
         } else if (id == R.id.pre_survey2) {
@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity
 
         long futureInMillis = SystemClock.elapsedRealtime() + delay;
         AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, SystemClock.elapsedRealtime(),
+        alarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(),
                 60000, pendingIntent);
         //alarmManager.set(AlarmManager.RTC_WAKEUP, futureInMillis, pendingIntent);
     }
@@ -160,6 +160,7 @@ public class MainActivity extends AppCompatActivity
         builder.setContentText("It's time for a new mindful breathing exercise!");
         builder.setSmallIcon(R.drawable.ear1);
         builder.setColor(0x4b966e);
+        builder.setShowWhen(false);
         return builder.build();
     }
 
